@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg_item"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:padding="5dp"
+    android:elevation="3dp">
+<!--    <de.hdodenhof.circleimageview.CircleImageView-->
+<!--        android:id="@+id/avatar_user"-->
+<!--        android:layout_width="55dp"-->
+<!--        android:layout_height="55dp"-->
+<!--        android:layout_weight="2"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        tools:src="@color/firstcolor" />-->
+
+    <ImageView
+        android:layout_margin="5dp"
+        android:id="@+id/pickLogo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_pick1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/idPick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_weight="1"
+        android:fontFamily="@font/poppins_semibold"
+        android:textColor="@color/abu1"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/pickLogo"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/id_pick" />
+
+    <TextView
+        android:id="@+id/agentTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:fontFamily="@font/poppins_regular"
+        android:maxLines="2"
+        android:textColor="@color/abu1"
+        app:layout_constraintStart_toEndOf="@+id/pickLogo"
+        app:layout_constraintTop_toBottomOf="@+id/idPick"
+        tools:text="@string/agent" />
+
+    <TextView
+        android:id="@+id/stsPickTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+       android:layout_marginRight="30dp"
+        android:textSize="18dp"
+        android:textColor="@color/firstcolor"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/sts_pick" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

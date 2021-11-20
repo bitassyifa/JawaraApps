@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginLayout">
+    <action
+        android:id="@+id/action_global_to_registerLayout"
+        app:destination="@id/registerLayout"
+        app:enterAnim="@anim/swipe_left_enter"
+        app:exitAnim="@anim/swipe_left_exit"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right"/>
+    <action
+        android:id="@+id/action_global_to_loginLayout"
+        app:destination="@id/loginLayout"
+        app:enterAnim="@anim/card_enter"
+        app:exitAnim="@anim/card_exit" />
+
+    <action
+        android:id="@+id/action_global_to_homeActivity"
+        app:destination="@id/homeActivity" />
+
+    <fragment
+        android:id="@+id/loginLayout"
+        android:name="com.projectassyifa.jawaraapps.login.layout.LoginLayout"
+        android:label="fragment_login_layout"
+        tools:layout="@layout/fragment_login_layout" >
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/registerLayout"
+        android:name="com.projectassyifa.jawaraapps.register.layout.RegisterLayout"
+        android:label="fragment_register_layout"
+        tools:layout="@layout/fragment_register_layout" >
+
+    </fragment>
+    <activity
+        android:id="@+id/homeActivity"
+        android:name="com.projectassyifa.jawaraapps.home.layout.HomeActivity"
+        android:label="activity_home"
+        tools:layout="@layout/activity_home" />
+</navigation>

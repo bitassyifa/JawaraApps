@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav"
+    app:startDestination="@id/homeLayout">
+
+
+    <fragment
+        android:id="@+id/homeLayout"
+        android:name="com.projectassyifa.jawaraapps.home.layout.HomeLayout"
+        android:label="fragment_home_layout"
+        tools:layout="@layout/fragment_home_layout" >
+
+        <action
+            android:id="@+id/action_homeLayout_to_userProfil"
+            app:destination="@id/userProfil" />
+        <action
+            android:id="@+id/action_homeLayout_to_portofolio"
+            app:destination="@id/portofolio" />
+        <action
+            android:id="@+id/action_homeLayout_to_pickup"
+            app:destination="@id/pickup" />
+    </fragment>
+    <fragment
+        android:id="@+id/portofolio"
+        android:name="com.projectassyifa.jawaraapps.portofolio.layout.Portofolio"
+        android:label="fragment_portofolio"
+        tools:layout="@layout/fragment_portofolio" />
+    <fragment
+        android:id="@+id/userProfil"
+        android:name="com.projectassyifa.jawaraapps.user.layout.UserProfil"
+        android:label="fragment_user_profil"
+        tools:layout="@layout/fragment_user_profil" />
+    <fragment
+        android:id="@+id/pickup"
+        android:name="com.projectassyifa.jawaraapps.pickup.layout.Pickup"
+        android:label="fragment_pickup"
+        tools:layout="@layout/fragment_pickup" />
+
+</navigation>

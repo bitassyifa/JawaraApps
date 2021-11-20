@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/homeLayout"
+        android:title="@string/menu_home"
+        android:contentDescription="@string/menu_home"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/portofolio"
+        android:title="@string/menu_portofolio"
+        android:contentDescription="@string/menu_portofolio"
+        android:icon="@drawable/ic_porto"/>
+    <item
+        android:id="@+id/pickup"
+        android:title="@string/menu_pick"
+        android:contentDescription="@string/menu_pick"
+        android:icon="@drawable/ic_pick"/>
+    <item
+        android:id="@+id/userProfil"
+        android:title="@string/menu_profil"
+        android:contentDescription="@string/menu_profil"
+        android:icon="@drawable/ic_profil"/>
+</menu>

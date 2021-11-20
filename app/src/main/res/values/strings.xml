@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">JawaraApps</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="panduan">Panduan</string>
+    <string name="tukar_poin">Tukar Poin</string>
+    <string name="cari_agen">Cari Agen</string>
+    <string name="_350_kg_ntotal_minyak">350 Kg\nTotal Minyak</string>
+    <string name="sp">com.projectassyifa.shared.preference</string>
+    <string name="email">Email</string>
+    <string name="login_method_key">Login</string>
+    <string name="token">Token</string>
+    <string name="default_value">notfound</string>
+    <string name="username">Username</string>
+    <string name="id">ID</string>
+    <string name="tukarkan_koinmu">Tukarkan Koinmu</string>
+    <string name="lihat_semua"><![CDATA[Lihat semua>]]></string>
+    <string name="reward">reward</string>
+    <string name="name_reward">Name Reward</string>
+    <string name="koin_reward">Koin Reward</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_portofolio">Portofolio</string>
+    <string name="menu_profil">Profil</string>
+    <string name="menu_pick">Pickup</string>
+
+    <!-- data dumy-->
+    <string-array name="reward_name">
+        <item>Telur 5kg</item>
+        <item>Beras 5Kg</item>
+        <item>Cabe Rawit 5Kg</item>
+        <item>Minyak Goreng 3Kg</item>
+        <item>Playstation 5</item>
+        <item>Vespa Matic</item>
+    </string-array>
+    <string-array name="reward_coin">
+        <item>1300 koin</item>
+        <item>1430 koin</item>
+        <item>1440 koin</item>
+        <item>2030 koin</item>
+        <item>155000 koin</item>
+        <item>1000000000 koin</item>
+    </string-array>
+    <integer-array name="reward_image">
+        <item>@drawable/telur</item>
+        <item>@drawable/beras</item>
+        <item>@drawable/cabe</item>
+        <item>@drawable/minyakgoreng</item>
+        <item>@drawable/ps5</item>
+        <item>@drawable/vespametic</item>
+    </integer-array>
+    <string name="title_activity_map_agent">MapAgentActivity</string>
+    <string name="maps_api_key">AIzaSyBQjVmGKO_W2E5AyqoWZCqU6VjX65tdGAg</string>
+    <string name="map_view">map_view</string>
+    <string name="tempat_penjemputan">Tempat Penjemputan :</string>
+    <string name="poto_profil">pp</string>
+    <string name="logout">Logout</string>
+    <string name="agent">Agent</string>
+    <string name="pilih_agent">Pilih Agent</string>
+    <string name="id_pick">Id Pick</string>
+    <string name="sts_pick">Status Pick</string>
+    <string name="stopbuangjalantah">#StopBuangJalantah!</string>
+    <string name="img">img</string>
+    <string name="tgl">tgl</string>
+</resources>
