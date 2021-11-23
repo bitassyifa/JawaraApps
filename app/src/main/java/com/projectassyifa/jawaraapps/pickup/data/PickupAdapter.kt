@@ -1,6 +1,7 @@
 package com.projectassyifa.jawaraapps.pickup.data
 
 import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.projectassyifa.jawaraapps.R
 import com.projectassyifa.jawaraapps.config.JawaraApps
+import com.projectassyifa.jawaraapps.pickup.layout.StatusPickupActivity
 
 class PickupAdapter(var listPick : List<PickupModel>, var activity: Activity) :RecyclerView.Adapter<PickVH>(){
 
@@ -22,7 +24,11 @@ class PickupAdapter(var listPick : List<PickupModel>, var activity: Activity) :R
         holder.idPick.text = daftar.id_pick
         holder.agent.text = daftar.agent
         holder.stsPick.text =daftar.status_pick
-
+        holder.itemView.setOnClickListener {
+            val stsPick = Intent(it.context,StatusPickupActivity::class.java)
+            stsPick.putExtra(StatusPickupActivity.EXTRA_ID_PICK,daftar.id_pick)
+            it.context.startActivity(stsPick)
+        }
     }
 
     override fun getItemCount(): Int {

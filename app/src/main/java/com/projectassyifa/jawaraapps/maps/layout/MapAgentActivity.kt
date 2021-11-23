@@ -39,6 +39,7 @@ import java.util.*
 import android.R
 import android.content.Context
 import android.content.SharedPreferences
+import android.text.TextUtils.indexOf
 import android.view.View
 import androidx.core.content.ContentProviderCompat.requireContext
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
@@ -51,6 +52,8 @@ import com.projectassyifa.jawaraapps.home.layout.HomeActivity
 import com.projectassyifa.jawaraapps.login.layout.LoginActivity
 import com.projectassyifa.jawaraapps.pickup.data.PickModelInsert
 import com.projectassyifa.jawaraapps.pickup.data.PickupRepo
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener
 
 
 class MapAgentActivity : AppCompatActivity(), OnMapReadyCallback,
@@ -165,6 +168,31 @@ class MapAgentActivity : AppCompatActivity(), OnMapReadyCallback,
         mMap = googleMap
         onCameraIdle()
 
+        mMap!!.setOnMarkerClickListener { marker ->
+            if (marker.isInfoWindowShown) {
+                marker.hideInfoWindow()
+            } else {
+                marker.hideInfoWindow()
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Konfirmasi ")
+                builder.setMessage("Pilih agent  ${marker.title} ? \n"
+
+                )
+                builder.setPositiveButton("Ya") { dialog, which ->
+                    binding.agent.setText(marker.title)
+                    idAgent = marker.snippet
+//                            alamat = it.address
+//                            noTlp = it.no_tlp
+                }
+                builder.setNegativeButton("Tidak"){dialog,which ->
+                }
+                val dialog: AlertDialog = builder.create()
+                dialog.show()
+
+                marker.showInfoWindow()
+            }
+            true
+        }
 
         if (ActivityCompat.checkSelfPermission(
                 this,
@@ -178,61 +206,21 @@ class MapAgentActivity : AppCompatActivity(), OnMapReadyCallback,
         }
         tokenOuth = Token(this)
         //agent
-        agentVM.agentResponse.observe(this, androidx.lifecycle.Observer {
 
+
+        agentVM.agentResponse.observe(this, androidx.lifecycle.Observer {
             it.forEach {
                 latlngs.add(LatLng(it.latitude, it.longitude))
-
-                for (point in latlngs) {
-                    println("POINT $point")
-                    options.position(point)
-                    options.title(it.fullname)
-                    options.snippet(it.id_agent)
-                    options.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_menu_myplaces))
-                    googleMap.addMarker(options)
-
-                }
             }
 
-            googleMap.setOnMarkerClickListener { marker ->
-                if (marker.isInfoWindowShown){
-                    marker.hideInfoWindow()
-                } else {
-                    idAgent = marker.snippet
-                    binding.agent.setText(marker.title)
-                }
-                true
+            for (point in latlngs.indices) {
+                options.position(latlngs[point])
+                options.title(it[point].fullname)
+                options.snippet(it[point].id_agent)
+                options.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_menu_myplaces))
+                googleMap.addMarker(options)
             }
-
-
-
-
         })
-
-//        mMap!!.setOnMarkerClickListener { marker ->
-//            if (marker.isInfoWindowShown) {
-//                marker.hideInfoWindow()
-//            } else {
-//                val builder = AlertDialog.Builder(this)
-//                builder.setTitle("Konfirmasi ")
-//                builder.setMessage("Pilih agent  ${marker.title} ? \n"
-//
-//                )
-//                builder.setPositiveButton("Ya") { dialog, which ->
-//                    binding.agent.setText(marker.title)
-//                    idAgent = marker.snippet
-////                            alamat = it.address
-////                            noTlp = it.no_tlp
-//                }
-//                builder.setNegativeButton("Tidak"){dialog,which ->
-//                }
-//                val dialog: AlertDialog = builder.create()
-//                dialog.show()
-////                    println("${marker.title}")
-//                marker.showInfoWindow()
-//            }
-//            true
-//        }
 
         agentVM.agent("Bearer ${tokenOuth.fetchAuthToken()}",this)
         mMap!!.isMyLocationEnabled = true
@@ -244,7 +232,8 @@ class MapAgentActivity : AppCompatActivity(), OnMapReadyCallback,
     }
 
 
-private fun getCurrentLocation() {
+
+    private fun getCurrentLocation() {
     fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this@MapAgentActivity)
     try {
         @SuppressLint("MissingPermission")
@@ -286,9 +275,7 @@ private fun getCurrentLocation() {
 
 
     private fun setAddress(address: Address) {
-        println("LEWAT SET ADDRESS")
-        println("INI LONGITUDE ${address.longitude}")
-        println("INI LATITUDE ${address.latitude}")
+
         longitude = address.longitude
         latitude = address.latitude
         if (address.getAddressLine(0)!=null){

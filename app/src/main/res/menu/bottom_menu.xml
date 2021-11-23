@@ -7,16 +7,21 @@
         android:title="@string/menu_home"
         android:contentDescription="@string/menu_home"
         android:icon="@drawable/ic_home"/>
-    <item
-        android:id="@+id/portofolio"
-        android:title="@string/menu_portofolio"
-        android:contentDescription="@string/menu_portofolio"
-        android:icon="@drawable/ic_porto"/>
+<!--    <item-->
+<!--        android:id="@+id/portofolio"-->
+<!--        android:title="@string/menu_portofolio"-->
+<!--        android:contentDescription="@string/menu_portofolio"-->
+<!--        android:icon="@drawable/ic_porto"/>-->
     <item
         android:id="@+id/pickup"
         android:title="@string/menu_pick"
         android:contentDescription="@string/menu_pick"
         android:icon="@drawable/ic_pick"/>
+    <item
+        android:id="@+id/wallet"
+        android:title="@string/wallet"
+        android:contentDescription="@string/wallet"
+        android:icon="@drawable/ic_wallet"/>
     <item
         android:id="@+id/userProfil"
         android:title="@string/menu_profil"

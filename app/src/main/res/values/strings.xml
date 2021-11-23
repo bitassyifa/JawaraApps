@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JawaraApps</string>
+    <string name="app_name">Jawara</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="panduan">Panduan</string>
@@ -14,8 +14,8 @@
     <string name="username">Username</string>
     <string name="id">ID</string>
     <string name="tukarkan_koinmu">Tukarkan Koinmu</string>
-    <string name="lihat_semua"><![CDATA[Lihat semua>]]></string>
-    <string name="reward">reward</string>
+    <string name="lihat_semua"><![CDATA[See All>]]></string>
+    <string name="reward">Reward</string>
     <string name="name_reward">Name Reward</string>
     <string name="koin_reward">Koin Reward</string>
     <string name="menu_home">Home</string>
@@ -61,4 +61,11 @@
     <string name="stopbuangjalantah">#StopBuangJalantah!</string>
     <string name="img">img</string>
     <string name="tgl">tgl</string>
+    <string name="status_pickup">Detail Status Pickup</string>
+    <string name="wallet">Wallet</string>
+    <string name="guide">Guide</string>
+    <string name="menu_event">Event</string>
+    <string name="menu_cs">CS</string>
+    <string name="request_pickup">Request Pickup</string>
+    <string name="catatan">Catatan</string>
 </resources>

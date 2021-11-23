@@ -4,7 +4,9 @@ import com.projectassyifa.jawaraapps.home.layout.HomeLayout
 import com.projectassyifa.jawaraapps.login.layout.LoginLayout
 import com.projectassyifa.jawaraapps.maps.layout.MapAgentActivity
 import com.projectassyifa.jawaraapps.pickup.data.PickupAdapter
+import com.projectassyifa.jawaraapps.pickup.data.PickupStatusAdapter
 import com.projectassyifa.jawaraapps.pickup.layout.Pickup
+import com.projectassyifa.jawaraapps.pickup.layout.StatusPickupActivity
 import com.projectassyifa.jawaraapps.register.layout.RegisterLayout
 import dagger.Component
 
@@ -16,4 +18,6 @@ interface ApplicationComponent {
     fun inject(mapAgentActivity: MapAgentActivity)
     fun inject(pickupAdapter: PickupAdapter)
     fun inject(pickup: Pickup)
+    fun inject(statusPickupActivity: StatusPickupActivity)
+    fun inject(pickupStatusAdapter: PickupStatusAdapter)
 }

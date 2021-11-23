@@ -34,7 +34,6 @@ class PickupRepo @Inject constructor(val pickupAPI: PickupAPI) {
     }
 
     fun getUserPick(token: String ,id_user : String,context: Context) {
-
         pickupAPI.getUserPick(token,id_user).enqueue(object :Callback<ResponseAPI>{
             override fun onResponse(call: Call<ResponseAPI>, response: Response<ResponseAPI>) {
                 val res = response.body()
@@ -65,6 +64,7 @@ class PickupRepo @Inject constructor(val pickupAPI: PickupAPI) {
     }
 
     fun getStatusPick(token: String,id_pickup: String,context: Context){
+        println("REPO $id_pickup")
         pickupAPI.getStatusPick(token, id_pickup).enqueue(object :Callback<ResponseAPI>{
             override fun onResponse(call: Call<ResponseAPI>, response: Response<ResponseAPI>) {
                 val res = response.body()
@@ -74,6 +74,9 @@ class PickupRepo @Inject constructor(val pickupAPI: PickupAPI) {
                     val listObject : Type = object : TypeToken<List<PickStatus>>() {}.type
                     val output : List<PickStatus> = gson.fromJson(gson.toJson(resData),listObject)
                     resStatus.value = output
+                    println("OUTPUT ${resStatus.value!![0].keterangan}")
+                } else {
+                    println("ELSE")
                 }
             }
 
@@ -83,6 +86,7 @@ class PickupRepo @Inject constructor(val pickupAPI: PickupAPI) {
                     "Request Failed : ${t.printStackTrace()}",
                     Toast.LENGTH_SHORT
                 ).show()
+                println("FAILED CONNECT")
             }
 
         })

@@ -11,10 +11,12 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
 import com.projectassyifa.jawaraapps.R
+import com.projectassyifa.jawaraapps.config.JawaraApps
 
 class PickupStatusAdapter(var listStatus : List<PickStatus>,var activity: Activity):RecyclerView.Adapter<StatusPickPH>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StatusPickPH {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.adapter_status_pick,parent,false)
+        (activity?.applicationContext as JawaraApps).applicationComponent.inject(this)
         return StatusPickPH(view)
     }
 
@@ -23,14 +25,13 @@ class PickupStatusAdapter(var listStatus : List<PickStatus>,var activity: Activi
         holder.nameStatus.text = positionList.status_pick
         holder.ketStatus.text = positionList.keterangan
         holder.tglStatus.text = positionList.date
-
+        println("ID ket ${positionList.keterangan}")
         var linkFoto = "http://202.62.9.138/jawara_api/photo/sts_pick/${positionList.id_sts_pick}"
         Glide.with(holder.itemView)
             .load(linkFoto)
             .transition(DrawableTransitionOptions.withCrossFade())
             .centerCrop()
             .apply(RequestOptions().override(50,50))
-            .placeholder(R.drawable.ic_re)
             .into(holder.imageStatus)
 
     }

@@ -61,7 +61,7 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="40dp"
         app:cardCornerRadius="15dp"
-        app:cardElevation="5dp"
+        app:cardElevation="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
@@ -137,7 +137,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         app:cardCornerRadius="15dp"
-        app:cardElevation="5dp"
+        app:cardElevation="3dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cv">
         <LinearLayout
@@ -150,15 +150,15 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/agen" />
+                android:src="@drawable/ic_store" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/cari_agen"
-                android:textSize="12dp"
+                android:text="@string/agent"
+                android:textSize="12sp"
                 android:textAlignment="center"
                 android:fontFamily="@font/poppins_medium"
-                android:textColor="@color/abu"/>
+                android:textColor="@color/firstcolor"/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -184,15 +184,15 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/tukarpoint" />
+                android:src="@drawable/ic_reward" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/tukar_poin"
-                android:textSize="12dp"
+                android:text="@string/reward"
+                android:textSize="12sp"
                 android:textAlignment="center"
                 android:fontFamily="@font/poppins_medium"
-                android:textColor="@color/abu"/>
+                android:textColor="@color/firstcolor"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -203,7 +203,7 @@
         android:layout_margin="20dp"
         android:layout_weight="1"
         app:cardCornerRadius="15dp"
-        app:cardElevation="5dp"
+        app:cardElevation="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cv">
         <LinearLayout
@@ -219,13 +219,118 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/panduan"
-                android:textSize="12dp"
+                android:text="@string/guide"
+                android:textSize="12sp"
                 android:textAlignment="center"
                 android:fontFamily="@font/poppins_medium"
-                android:textColor="@color/abu"/>
+                android:textColor="@color/firstcolor"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_margin="20dp"
+            android:id="@+id/cardView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="3dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
+            <LinearLayout
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:id="@+id/menu_portofolio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_portofolio" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/menu_portofolio"
+                    android:textSize="12sp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="@color/firstcolor"/>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="3dp"
+            app:layout_constraintEnd_toStartOf="@+id/cardView7"
+            app:layout_constraintStart_toEndOf="@+id/cardView1"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+            <LinearLayout
+                android:id="@+id/menu_event"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_event" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/menu_event"
+                    android:textAlignment="center"
+                    android:textColor="@color/firstcolor"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+            <LinearLayout
+                android:id="@+id/menu_cs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_cs" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@string/menu_cs"
+                    android:textAlignment="center"
+                    android:textColor="@color/firstcolor"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView5"
@@ -233,8 +338,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         app:cardCornerRadius="15dp"
-        app:cardElevation="5dp"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3"
+        app:cardElevation="3dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardView1"
         tools:layout_editor_absoluteX="20dp">
 
         <com.denzcoskun.imageslider.ImageSlider
@@ -252,7 +357,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="@string/tukarkan_koinmu"
+        android:text="@string/reward"
         android:textColor="@color/firstcolor"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"

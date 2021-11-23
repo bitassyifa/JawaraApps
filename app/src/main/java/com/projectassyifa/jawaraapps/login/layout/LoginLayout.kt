@@ -80,6 +80,7 @@ class LoginLayout : Fragment() , View.OnClickListener {
         //login validation
         if (dataLogin?.contains(getString(R.string.id))!! && dataLogin?.contains(getString(R.string.login_method_key))!!)
         {
+
             view.findNavController().navigate(R.id.action_global_to_homeActivity)
         }
 
@@ -118,7 +119,7 @@ class LoginLayout : Fragment() , View.OnClickListener {
 
             }
             binding.buttonLogin ->{
-                showLoad(true)
+
                 val auth = LoginModel(
                     email = binding.email.text.toString(),
                     password = binding.password.text.toString()
@@ -129,32 +130,22 @@ class LoginLayout : Fragment() , View.OnClickListener {
                 if(emailErr.trim().isEmpty()) {
                     binding.email.error = "Required"
                     Toast.makeText(this.requireContext(), "Email Required ", Toast.LENGTH_SHORT).show()
-                    showLoad(false)
+
                 }
                 else if (binding.password.text.toString().trim().isEmpty()) {
                     binding.password.error = "Required"
                     Toast.makeText(this.requireContext(), "Password Required ", Toast.LENGTH_SHORT).show()
-                    showLoad(false)
+
                 }
                 else if (binding.password.length() < 8){
                     binding.password.error = "Min 8 Character"
-                    showLoad(false)
+
                 }
                 else {
 
                     loginVM.login(auth,requireContext())
                 }
             }
-        }
-    }
-    private fun showLoad(state : Boolean){
-        println(
-            "MASUK SHOW $state"
-        )
-        if (state){
-            binding.laoding.visibility = View.VISIBLE
-        }else{
-            binding.laoding.visibility = View.GONE
         }
     }
 

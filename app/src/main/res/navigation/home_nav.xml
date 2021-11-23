@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_homeLayout_to_pickup"
             app:destination="@id/pickup" />
+        <action
+            android:id="@+id/action_homeLayout_to_wallet"
+            app:destination="@id/wallet" />
     </fragment>
     <fragment
         android:id="@+id/portofolio"
@@ -37,5 +40,10 @@
         android:name="com.projectassyifa.jawaraapps.pickup.layout.Pickup"
         android:label="fragment_pickup"
         tools:layout="@layout/fragment_pickup" />
+    <fragment
+        android:id="@+id/wallet"
+        android:name="com.projectassyifa.jawaraapps.wallet.layout.Wallet"
+        android:label="fragment_wallet"
+        tools:layout="@layout/fragment_wallet" />
 
 </navigation>
