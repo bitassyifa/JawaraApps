@@ -100,6 +100,7 @@ class LoginLayout : Fragment() , View.OnClickListener {
                             this?.putString(getString(R.string.id),it.id)
                             this?.putString(getString(R.string.email),it.email)
                             this?.putString(getString(R.string.username),it.username)
+                            this?.putString(getString(R.string.sts_verifikasi),it.sts_verifikasi)
                             this?.putString(getString(R.string.login_method_key),"loginData")
                             this?.commit()
                         }

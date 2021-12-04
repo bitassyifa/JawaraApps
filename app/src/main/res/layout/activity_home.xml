@@ -11,7 +11,6 @@
         android:id="@+id/main_fragment"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="20dp"
         android:name="androidx.navigation.fragment.NavHostFragment"
         app:defaultNavHost="true"
         app:navGraph='@navigation/home_nav'
@@ -21,12 +20,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <me.ibrahimsn.lib.SmoothBottomBar
-
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="55dp"
        android:background="@color/white"
-        app:cornerRadius="10dp"
+        app:cornerRadius="5dp"
         app:iconSize="20dp"
         app:iconTint="@color/abu1"
         app:iconTintActive="@color/white"
@@ -38,16 +36,5 @@
         app:sideMargins="5dp"
         android:elevation="200dp"
         app:textColor="@color/white" />
-
-<!--    <com.ismaeldivita.chipnavigation.ChipNavigationBar-->
-<!--        app:cnb_unselectedColor="@color/abu1"-->
-<!--        android:id="@+id/menu_bottom"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:background="@color/white"-->
-<!--        android:elevation="18dp"-->
-<!--        android:padding="7dp"-->
-<!--        app:cnb_menuResource="@menu/bottom_menu"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

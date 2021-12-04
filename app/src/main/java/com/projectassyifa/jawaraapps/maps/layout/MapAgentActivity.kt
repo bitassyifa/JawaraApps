@@ -98,11 +98,13 @@ class MapAgentActivity : AppCompatActivity(), OnMapReadyCallback,
         } catch (e:IOException){
             e.printStackTrace()
         }
-
-
         setAddress(addresses!![0])
     }
 
+    override fun onResume() {
+        super.onResume()
+        checkGps()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMapAgentBinding.inflate(layoutInflater)
@@ -143,7 +145,6 @@ class MapAgentActivity : AppCompatActivity(), OnMapReadyCallback,
                 .setNegativeButton(R.string.no, null)
                 .show()
         } else{
-            println("MASUK ELSE CHECK GPS")
             getCurrentLocation()
         }
     }

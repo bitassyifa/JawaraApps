@@ -55,16 +55,15 @@ class HomeLayout : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentHomeLayoutBinding.inflate(inflater, container, false)
         val view = binding.root
+        binding.scView.fullScroll(View.FOCUS_UP)
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.searchAgent.setOnClickListener {
             startActivity(Intent(this.activity,MapAgentActivity::class.java))
         }
-
         rv = binding.rewardRv
         rv.setHasFixedSize(true)
         list.addAll(listReward)
@@ -82,30 +81,29 @@ class HomeLayout : Fragment() {
         )
         binding.username.text = " Hi, $username"
 
-//        userVM.userData.observe(viewLifecycleOwner, Observer {
-//            binding.username.text = " Hi, ${it.username}"
-//            println("NAMA ${it.username}")
-//        })
-////        userVM.userById("Bearer ${tokenOuth.fetchAuthToken()}",id.toString(),requireContext())
-
+        userVM.userData.observe(viewLifecycleOwner, Observer {
+            binding.saldoTv.text = "Rp. ${it.saldo}\nSaldo"
+            binding.oil.text = "${it.total_minyak} Kg \nMinyak"
+        })
+        userVM.userById("Bearer ${tokenOuth.fetchAuthToken()}",id.toString(),requireContext())
 
         var banner_menu = binding.bannerSlide
         val imageList = ArrayList<SlideModel>()
-
        imageList.add(SlideModel(R.drawable.banner2, ScaleTypes.FIT))
        imageList.add(SlideModel(R.drawable.banner2, ScaleTypes.FIT))
        imageList.add(SlideModel(R.drawable.banner2, ScaleTypes.FIT))
-
         banner_menu.setImageList(imageList)
-
-
-
     }
 
     private fun showList() {
         rv.layoutManager = LinearLayoutManager(this.requireContext(),LinearLayoutManager.HORIZONTAL,false)
         val rewardAdapter = RewardAdapter(list)
         rv.adapter = rewardAdapter
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.scView.fullScroll(View.FOCUS_UP)
     }
     private val listReward:ArrayList<RewardModel>
     get() {

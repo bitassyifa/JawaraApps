@@ -2,16 +2,17 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home.layout.HomeLayout"
     android:background="@color/bg"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:focusableInTouchMode="true"
+    android:descendantFocusability="blocksDescendants"
+    android:id="@+id/scView">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-
+        android:layout_height="wrap_content">
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -25,12 +26,12 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_bold"
+            android:fontFamily="@font/poppins_semibold"
             android:gravity="center"
-            android:text="@string/stopbuangjalantah"
+            android:text="@string/ubahjalantahjadiberkah"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="22sp"
+            android:textSize="19sp"
             app:layout_constraintBottom_toTopOf="@+id/cv"
             app:layout_constraintTop_toBottomOf="@+id/username" />
 
@@ -62,6 +63,7 @@
         android:layout_marginEnd="40dp"
         app:cardCornerRadius="15dp"
         app:cardElevation="3dp"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" >
@@ -81,16 +83,16 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/koin"
+            android:id="@+id/saldoTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
             android:fontFamily="@font/poppins_semibold"
             android:gravity="center"
-            android:text="Rp. 50.000\nSaldo"
+            android:text=""
             android:textColor="@color/abu"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/view"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -120,10 +122,11 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
             android:gravity="center"
-            android:text="@string/_350_kg_ntotal_minyak"
+            android:text=""
             android:textColor="@color/abu"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView1"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -138,6 +141,7 @@
         android:layout_weight="1"
         app:cardCornerRadius="15dp"
         app:cardElevation="3dp"
+        android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cv">
         <LinearLayout
@@ -146,7 +150,8 @@
             android:id="@+id/searchAgent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:focusable="true">
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -171,6 +176,7 @@
         android:layout_weight="1"
         app:cardCornerRadius="15dp"
         app:cardElevation="10dp"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toStartOf="@+id/cardView4"
         app:layout_constraintStart_toEndOf="@+id/cardView"
         app:layout_constraintTop_toBottomOf="@+id/cv">
@@ -204,6 +210,7 @@
         android:layout_weight="1"
         app:cardCornerRadius="15dp"
         app:cardElevation="3dp"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cv">
         <LinearLayout
@@ -234,6 +241,7 @@
             android:layout_weight="1"
             app:cardCornerRadius="15dp"
             app:cardElevation="3dp"
+            android:backgroundTint="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView">
             <LinearLayout
@@ -267,6 +275,7 @@
             android:layout_weight="1"
             app:cardCornerRadius="15dp"
             app:cardElevation="3dp"
+            android:backgroundTint="@color/white"
             app:layout_constraintEnd_toStartOf="@+id/cardView7"
             app:layout_constraintStart_toEndOf="@+id/cardView1"
             app:layout_constraintTop_toBottomOf="@+id/cardView">
@@ -304,6 +313,7 @@
             android:layout_weight="1"
             app:cardCornerRadius="15dp"
             app:cardElevation="3dp"
+            android:backgroundTint="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardView">
 

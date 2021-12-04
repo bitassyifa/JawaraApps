@@ -10,5 +10,6 @@ class LoginResponse (
   var id :String?,
   var token : String?,
   var email: String?,
+  var sts_verifikasi: String?,
   var username : String?
         ){}

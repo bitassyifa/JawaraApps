@@ -8,6 +8,8 @@ import com.projectassyifa.jawaraapps.pickup.data.PickupStatusAdapter
 import com.projectassyifa.jawaraapps.pickup.layout.Pickup
 import com.projectassyifa.jawaraapps.pickup.layout.StatusPickupActivity
 import com.projectassyifa.jawaraapps.register.layout.RegisterLayout
+import com.projectassyifa.jawaraapps.user.layout.EditProfil
+import com.projectassyifa.jawaraapps.user.layout.UserProfil
 import dagger.Component
 
 @Component(modules = [NetworkModul::class])
@@ -20,4 +22,6 @@ interface ApplicationComponent {
     fun inject(pickup: Pickup)
     fun inject(statusPickupActivity: StatusPickupActivity)
     fun inject(pickupStatusAdapter: PickupStatusAdapter)
+    fun inject(userProfil: UserProfil)
+    fun inject(editProfil: EditProfil)
 }

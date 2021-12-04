@@ -25,17 +25,12 @@ class PickupStatusAdapter(var listStatus : List<PickStatus>,var activity: Activi
         holder.nameStatus.text = positionList.status_pick
         holder.ketStatus.text = positionList.keterangan
         holder.tglStatus.text = positionList.date
-        println("ID ket ${positionList.keterangan}")
         var linkFoto = "http://202.62.9.138/jawara_api/photo/sts_pick/${positionList.id_sts_pick}"
         Glide.with(holder.itemView)
             .load(linkFoto)
-            .transition(DrawableTransitionOptions.withCrossFade())
             .centerCrop()
-            .apply(RequestOptions().override(50,50))
             .into(holder.imageStatus)
-
     }
-
     override fun getItemCount(): Int {
      return listStatus.size
     }

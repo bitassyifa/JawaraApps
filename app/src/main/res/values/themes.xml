@@ -18,4 +18,9 @@
         <item name="colorControlActivated">@color/firstcolor</item>
         <item name="colorControlHighlight">@color/firstcolor</item>
     </style>
+    <style name="SpinnerTheme">
+        <item name="android:textColor">@color/abu</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:layout_margin">3dp</item>
+    </style>
 </resources>

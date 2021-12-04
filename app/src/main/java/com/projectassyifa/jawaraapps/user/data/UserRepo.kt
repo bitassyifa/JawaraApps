@@ -6,15 +6,19 @@ import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.projectassyifa.jawaraapps.extra.ResponseAPI
-import com.projectassyifa.jawaraapps.extra.Token
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.File
 import java.lang.reflect.Type
 import javax.inject.Inject
 
 class UserRepo @Inject constructor(val userAPI: UserAPI) {
     var userResponse = MutableLiveData<UserModel>()
+    var resApi = MutableLiveData<ResponseAPI>()
 
 
     fun userById(token: String ,id : String,context: Context){
@@ -40,7 +44,69 @@ class UserRepo @Inject constructor(val userAPI: UserAPI) {
             }
 
         })
+    }
 
+    fun userUpdate(token: String,updateUserModel: UpdateUserModel,context: Context,file : File){
+//        val id_user = convert(updateUserModel.id_user.toString())
+        val nama = convert(updateUserModel.nama.toString())
+        val jk = convert(updateUserModel.jk.toString())
+        val nik = convert(updateUserModel.nik.toString())
+        val tgl_lahir = convert(updateUserModel.tgl_lahir.toString())
+        val no_tlp = convert(updateUserModel.no_tlp.toString())
+        val alamat = convert(updateUserModel.alamat.toString())
+//        val foto_diri = convertFile(foto_diri)
+        val fotoKtp = convertFile(file)
+        userAPI.userUpdate(token,updateUserModel.id_user.toString(),nama, jk, nik, tgl_lahir, no_tlp, alamat,fotoKtp).enqueue(object : Callback<ResponseAPI>{
+            override fun onResponse(call: Call<ResponseAPI>, response: Response<ResponseAPI>) {
+                val res = response.body()
+               if (res != null){
+                   if (res.status){
+                       resApi.value = res
+                   } else {
+                       Toast.makeText(context, "${res.message}", Toast.LENGTH_SHORT).show()
+                   }
+               } else {
+                   Toast.makeText(context, "Tejadi kesalahan ${response.message()}", Toast.LENGTH_SHORT).show()
+               }
+            }
+            override fun onFailure(call: Call<ResponseAPI>, t: Throwable) {
+                Toast.makeText(context, "Failed ${t.printStackTrace()}", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    fun userUpdateNoPhoto(token: String,updateUserModel: UpdateUserModel,context: Context){
+        val nama = convert(updateUserModel.nama.toString())
+        val jk = convert(updateUserModel.jk.toString())
+        val nik = convert(updateUserModel.nik.toString())
+        val tgl_lahir = convert(updateUserModel.tgl_lahir.toString())
+        val no_tlp = convert(updateUserModel.no_tlp.toString())
+        val alamat = convert(updateUserModel.alamat.toString())
+        userAPI.userUpdateNophoto(token,updateUserModel.id_user.toString(),nama, jk, nik, tgl_lahir, no_tlp, alamat).enqueue(object : Callback<ResponseAPI>{
+            override fun onResponse(call: Call<ResponseAPI>, response: Response<ResponseAPI>) {
+                val res = response.body()
+                if (res != null){
+                    if (res.status){
+                        resApi.value = res
+                    } else {
+                        Toast.makeText(context, "${res.message}", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    Toast.makeText(context, "Tejadi kesalahan ${response.message()}", Toast.LENGTH_SHORT).show()
+                }
+            }
+            override fun onFailure(call: Call<ResponseAPI>, t: Throwable) {
+                Toast.makeText(context, "Failed ${t.printStackTrace()}", Toast.LENGTH_SHORT).show()
+            }
+        })
+    }
+
+    private fun convert (string:String) : RequestBody {
+        return RequestBody.create("text/plain".toMediaTypeOrNull(),string)
+    }
+    private fun convertFile(file: File): MultipartBody.Part{
+        val reqFile : RequestBody = RequestBody.create("image/*".toMediaTypeOrNull(),file)
+        return MultipartBody.Part.createFormData("foto_ktp",file.name,reqFile)
     }
 }
 

@@ -13,4 +13,15 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="MyEditTextTheme">
+        <item name="colorControlNormal">@color/abu</item>
+        <item name="colorControlActivated">@color/firstcolor</item>
+        <item name="colorControlHighlight">@color/firstcolor</item>
+    </style>
+    <style name="SpinnerTheme">
+        <item name="android:textColor">@color/abu</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="textSize">11dp</item>
+    </style>
 </resources>

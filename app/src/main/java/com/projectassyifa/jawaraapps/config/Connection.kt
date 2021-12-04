@@ -21,7 +21,7 @@ class Connection {
                 .Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
-                .client(okHttpClient)
+//                .client(okHttpClient)
                 .build()
             return connection
         }

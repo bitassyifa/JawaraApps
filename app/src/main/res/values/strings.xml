@@ -22,7 +22,11 @@
     <string name="menu_portofolio">Portofolio</string>
     <string name="menu_profil">Profil</string>
     <string name="menu_pick">Pickup</string>
-
+    <string-array name="gender">
+        <item>- Pilih jenis kelamin -</item>
+        <item>Laki-laki</item>
+        <item>Perempuan</item>
+    </string-array>
     <!-- data dumy-->
     <string-array name="reward_name">
         <item>Telur 5kg</item>
@@ -68,4 +72,24 @@
     <string name="menu_cs">CS</string>
     <string name="request_pickup">Request Pickup</string>
     <string name="catatan">Catatan</string>
+    <string name="Saldo">saldo</string>
+    <string name="minyak">Minyak</string>
+    <string name="name">Name</string>
+    <string name="user_status">Status : </string>
+    <string name="sts_verifikasi">Status Verifikasi</string>
+    <string name="notlp">No Tlp</string>
+    <string name="akun">Akun</string>
+    <string name="ubah_profil">Ubah Profil</string>
+    <string name="Password">Password</string>
+    <string name="keuntungan_pakai_jawara">Keuntungan pakai JAWARA</string>
+    <string name="syarat_amp_ketentuan"><![CDATA[Syarat & Ketentuan]]></string>
+    <string name="kebijakan_privasi">Kebijakan privasi</string>
+    <string name="pusat_bantuan">Pusat bantuan</string>
+    <string name="nama_lengkap">Nama Lengkap</string>
+    <string name="nik">Nik</string>
+    <string name="alamat">Alamat</string>
+    <string name="tanggal_lahir">Tanggal Lahir</string>
+    <string name="ubahjalantahjadiberkah">#UbahJalantahJadiBerkah</string>
+    <string name="biodata">Biodata</string>
+    <string name="user">User</string>
 </resources>
