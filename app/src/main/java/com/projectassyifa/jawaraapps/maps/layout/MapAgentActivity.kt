@@ -222,18 +222,12 @@ class MapAgentActivity : AppCompatActivity(), OnMapReadyCallback,
                 googleMap.addMarker(options)
             }
         })
-
         agentVM.agent("Bearer ${tokenOuth.fetchAuthToken()}",this)
         mMap!!.isMyLocationEnabled = true
         mMap!!.setOnCameraMoveListener(this)
         mMap!!.setOnCameraMoveStartedListener(this)
         mMap!!.setOnCameraIdleListener(this)
-
-
     }
-
-
-
     private fun getCurrentLocation() {
     fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this@MapAgentActivity)
     try {
@@ -347,27 +341,31 @@ class MapAgentActivity : AppCompatActivity(), OnMapReadyCallback,
     override fun onClick(v: View?) {
        when(v) {
            binding.buttonPick -> {
-               showLoad(true)
-               tokenOuth = Token(this)
+               if (idAgent != null) {
+                   showLoad(true)
+                   tokenOuth = Token(this)
 
-               val id = dataLogin?.getString(
-                   getString(com.projectassyifa.jawaraapps.R.string.id),
-                   getString(com.projectassyifa.jawaraapps.R.string.default_value)
-               )
-            val dataPick = PickModelInsert(
-                id_user = id.toString(),
-                id_agent = idAgent.toString(),
-                alamat = binding.addressPick.text.toString(),
-                note = binding.addressNote.text.toString(),
-                longitude = longitude!!,
-                latitude = latitude!!
-            )
-               pickupRepo.resApi?.observe(this, androidx.lifecycle.Observer {
-                   if (it.status){
-                       startActivity(Intent(this,HomeActivity::class.java))
-                   }
-               })
-               pickupRepo.insertPick("Bearer ${tokenOuth.fetchAuthToken()}",dataPick,this)
+                   val id = dataLogin?.getString(
+                       getString(com.projectassyifa.jawaraapps.R.string.id),
+                       getString(com.projectassyifa.jawaraapps.R.string.default_value)
+                   )
+                   val dataPick = PickModelInsert(
+                       id_user = id.toString(),
+                       id_agent = idAgent.toString(),
+                       alamat = binding.addressPick.text.toString(),
+                       note = binding.addressNote.text.toString(),
+                       longitude = longitude!!,
+                       latitude = latitude!!
+                   )
+                   pickupRepo.resApi?.observe(this, androidx.lifecycle.Observer {
+                       if (it.status) {
+                           startActivity(Intent(this, HomeActivity::class.java))
+                       }
+                   })
+                   pickupRepo.insertPick("Bearer ${tokenOuth.fetchAuthToken()}", dataPick, this)
+               } else {
+                   Toast.makeText(this@MapAgentActivity,"Mohon pilih agen",Toast.LENGTH_SHORT).show()
+               }
            }
        }
     }

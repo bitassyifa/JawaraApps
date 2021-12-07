@@ -92,4 +92,9 @@
     <string name="ubahjalantahjadiberkah">#UbahJalantahJadiBerkah</string>
     <string name="biodata">Biodata</string>
     <string name="user">User</string>
+    <string name="verification_otp">Verification OTP</string>
+    <string name="masukan_nomer_telepon">Masukan Nomer Telepon</string>
+    <string name="verifikasi">Verifikasi</string>
+    <string name="my_wallet">My Wallet</string>
+    <string name="tarik_tunai">Tarik tunai</string>
 </resources>

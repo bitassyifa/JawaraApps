@@ -63,6 +63,5 @@ class StatusPickupActivity : AppCompatActivity() {
     }
     companion object {
         const val EXTRA_ID_PICK = "id_pickup"
-
     }
 }

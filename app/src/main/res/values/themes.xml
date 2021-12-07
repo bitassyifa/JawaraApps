@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/firstcolor</item>
         <item name="colorPrimaryVariant">@color/firstcolor</item>
         <item name="colorOnPrimary">@color/white</item>
+
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
@@ -22,5 +23,17 @@
         <item name="android:textColor">@color/abu</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
         <item name="android:layout_margin">3dp</item>
+    </style>
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/MyCustomTextAppearance</item>
+    </style>
+
+    <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="tabSelectedTextColor">@color/firstcolor</item>
+        <item name="android:textColor">@color/abu1</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">13sp</item>
     </style>
 </resources>

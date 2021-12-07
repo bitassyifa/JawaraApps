@@ -1,5 +1,6 @@
 package com.projectassyifa.jawaraapps.register.layout
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -16,6 +17,7 @@ import com.projectassyifa.jawaraapps.R
 import com.projectassyifa.jawaraapps.config.JawaraApps
 import com.projectassyifa.jawaraapps.databinding.FragmentLoginLayoutBinding
 import com.projectassyifa.jawaraapps.databinding.FragmentRegisterLayoutBinding
+import com.projectassyifa.jawaraapps.otp.SendOtpActivity
 import com.projectassyifa.jawaraapps.register.data.RegisterModel
 import com.projectassyifa.jawaraapps.register.data.RegisterVM
 import javax.inject.Inject
@@ -75,11 +77,11 @@ class RegisterLayout : Fragment(), View.OnClickListener {
                 navController = view?.let { Navigation.findNavController(it) }!!
             }
             binding.buttonRegister -> {
-                val dataRegist = RegisterModel(
-                    username = binding.username.text.toString(),
-                    email = binding.email.text.toString(),
-                    password = binding.password.text.toString()
-                )
+//                val dataRegist = RegisterModel(
+//                    username = binding.username.text.toString(),
+//                    email = binding.email.text.toString(),
+//                    password = binding.password.text.toString()
+//                )
                 val user_msg_error: String = binding.username.text.toString()
 
                 //check if the EditText have values or not
@@ -106,16 +108,21 @@ class RegisterLayout : Fragment(), View.OnClickListener {
                     Toast.makeText(this.context,"Password does not match", Toast.LENGTH_SHORT).show()
                 }
                 else{
-
-                    registerVM.resApi.observe(viewLifecycleOwner, Observer {
-                        if (it.status){
-                            Toast.makeText(this.context,"Register Success", Toast.LENGTH_SHORT).show()
-                            view?.findNavController()?.navigate(R.id.action_global_to_loginLayout)
-                            navController = view?.let { Navigation.findNavController(it) }!!
-                        }
-                    })
-                        registerVM.register(dataRegist,requireContext())
+//                    registerVM.resApi.observe(viewLifecycleOwner, Observer {
+//                        if (it.status){
+//                            Toast.makeText(this.context,"Register Success", Toast.LENGTH_SHORT).show()
+//                            view?.findNavController()?.navigate(R.id.action_global_to_loginLayout)
+//                            navController = view?.let { Navigation.findNavController(it) }!!
+//                        }
+//                    })
+//                        registerVM.register(dataRegist,requireContext())
+                        val toSend = Intent(this.context,SendOtpActivity::class.java)
+                        toSend.putExtra(SendOtpActivity.EXTRA_USERNAME,binding.username.text.toString())
+                        toSend.putExtra(SendOtpActivity.EXTRA_EMAIL,binding.email.text.toString())
+                        toSend.putExtra(SendOtpActivity.EXTRA_PASSWORD,binding.password.text.toString())
+                        this.context?.startActivity(toSend)
                     }
+
                 }
             }
         }

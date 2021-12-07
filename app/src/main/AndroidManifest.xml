@@ -23,6 +23,12 @@
         android:theme="@style/Theme.JawaraApps"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".otp.VerifyOtpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".otp.SendOtpActivity"
+            android:exported="true" />
+        <activity
             android:name=".user.layout.EditProfil"
             android:exported="true" />
         <activity
@@ -59,6 +65,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.easyphotopicker.fileprovider"

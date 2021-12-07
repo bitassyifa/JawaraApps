@@ -3,6 +3,7 @@ package com.projectassyifa.jawaraapps.config
 import com.projectassyifa.jawaraapps.home.layout.HomeLayout
 import com.projectassyifa.jawaraapps.login.layout.LoginLayout
 import com.projectassyifa.jawaraapps.maps.layout.MapAgentActivity
+import com.projectassyifa.jawaraapps.otp.VerifyOtpActivity
 import com.projectassyifa.jawaraapps.pickup.data.PickupAdapter
 import com.projectassyifa.jawaraapps.pickup.data.PickupStatusAdapter
 import com.projectassyifa.jawaraapps.pickup.layout.Pickup
@@ -24,4 +25,5 @@ interface ApplicationComponent {
     fun inject(pickupStatusAdapter: PickupStatusAdapter)
     fun inject(userProfil: UserProfil)
     fun inject(editProfil: EditProfil)
+    fun inject(verifyOtpActivity: VerifyOtpActivity)
 }
