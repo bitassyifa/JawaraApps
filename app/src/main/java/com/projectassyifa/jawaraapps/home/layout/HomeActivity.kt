@@ -2,6 +2,8 @@ package com.projectassyifa.jawaraapps.home.layout
 
 
 import android.Manifest
+import android.content.Context
+import android.content.SharedPreferences
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -22,11 +24,15 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var binding: ActivityHomeBinding
     private var backpressedTime = 0L
-
+//    var dataLogin: SharedPreferences? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+//        dataLogin = this.getSharedPreferences(
+//            getString(com.projectassyifa.jawaraapps.R.string.sp),
+//            Context.MODE_PRIVATE
+//        )
         navController = findNavController(R.id.main_fragment)
         setupSmoothBottomMenu()
         if (ContextCompat.checkSelfPermission(this,
@@ -53,10 +59,10 @@ class HomeActivity : AppCompatActivity() {
                     if ((ContextCompat.checkSelfPermission(this,
                             Manifest.permission.ACCESS_FINE_LOCATION) ==
                                 PackageManager.PERMISSION_GRANTED)) {
-                        Toast.makeText(this, "Permission Granted", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "izin diberikan", Toast.LENGTH_SHORT).show()
                     }
                 } else {
-                    Toast.makeText(this, "Permission Denied", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Izin ditolak", Toast.LENGTH_SHORT).show()
                 }
                 return
             }

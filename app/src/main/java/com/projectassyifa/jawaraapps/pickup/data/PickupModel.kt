@@ -28,3 +28,9 @@ class PickStatus(
     var keterangan : String,
     var date : String
 ){}
+
+class WadahModel(
+    var id_wadah : String ,
+    var wadah : String,
+    var berat : String
+){}

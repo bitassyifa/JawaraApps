@@ -5,22 +5,28 @@
       <map>
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable-v24/edittext_bg.xml" value="0.3141025641025641" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_1.xml" value="0.21756756756756757" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_2.xml" value="0.2013157894736842" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_adress.xml" value="0.21756756756756757" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_bottomnv.xml" value="0.1675438596491228" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_btn.xml" value="0.2026315789473684" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_edittext.xml" value="0.3141025641025641" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_edittext_focused.xml" value="0.3141025641025641" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_edittext_normal.xml" value="0.3141025641025641" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_history_trans.xml" value="0.3223684210526316" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_home.xml" value="0.3181818181818182" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_item.xml" value="0.3181818181818182" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_listbank.xml" value="0.22543859649122808" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_login.xml" value="0.240625" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_rek.xml" value="0.22543859649122808" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_reward.xml" value="0.22117117117117116" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_spinner.xml" value="0.22521367521367522" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_stts_pick.xml" value="0.1868421052631579" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_title.xml" value="0.18333333333333332" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_verif.xml" value="0.3223684210526316" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_wallet.xml" value="0.3223684210526316" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_wallet_bot.xml" value="0.2013157894736842" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_wallet_top.xml" value="0.3223684210526316" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/bg_wd.xml" value="0.25" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/dotted.xml" value="0.3141025641025641" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/ic_bg_profil1.xml" value="0.3181818181818182" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/ic_calender.xml" value="0.3141025641025641" />
@@ -30,6 +36,7 @@
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/ic_file.xml" value="0.21452991452991452" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/ic_home.xml" value="0.1" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/ic_next.xml" value="0.3141025641025641" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/ic_notes.xml" value="0.2013157894736842" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/ic_notif.xml" value="0.3181818181818182" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/ic_pick.xml" value="0.1868421052631579" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/ic_pick1.xml" value="0.3181818181818182" />
@@ -39,26 +46,34 @@
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/ic_re.xml" value="0.1868421052631579" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/progress.xml" value="0.3527777777777778" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/drawable/textline.xml" value="0.1564102564102564" />
-        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/activity_edit_profil.xml" value="0.2" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/activity_add_bank_account.xml" value="0.22" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/activity_edit_profil.xml" value="0.25" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/activity_home.xml" value="0.22" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/activity_listrek.xml" value="0.18" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/activity_login.xml" value="0.18903508771929825" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/activity_main.xml" value="0.12" />
-        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/activity_map_agent.xml" value="0.15" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/activity_map_agent.xml" value="0.33" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/activity_send_otp.xml" value="0.18" />
-        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/activity_status_pickup.xml" value="0.25" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/activity_status_pickup.xml" value="0.2" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/activity_verify_otp.xml" value="0.22" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/activity_withdraw.xml" value="0.25" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/adapter_history_trans.xml" value="0.33" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/adapter_listbank.xml" value="0.25" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/adapter_listrekening.xml" value="0.33" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/adapter_pick.xml" value="0.2" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/adapter_reward.xml" value="0.5" />
-        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/adapter_status_pick.xml" value="0.25" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/adapter_status_pick.xml" value="0.2" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/adapter_wadah.xml" value="0.33" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/fragment_base.xml" value="0.3087719298245614" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/fragment_home_layout.xml" value="0.2" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/fragment_income.xml" value="0.25" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/fragment_login_layout.xml" value="0.25" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/fragment_pickup.xml" value="0.22" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/fragment_portofolio.xml" value="0.3171171171171171" />
-        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/fragment_register_layout.xml" value="0.16" />
-        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/fragment_spending.xml" value="0.2969298245614035" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/fragment_register_layout.xml" value="0.33" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/fragment_spending.xml" value="0.1" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/fragment_user_profil.xml" value="0.2" />
-        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/fragment_wallet.xml" value="0.22" />
+        <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/layout/fragment_wallet.xml" value="0.25" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/menu/bottom_menu.xml" value="0.22" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/menu/upload.xml" value="0.2012820512820513" />
         <entry key="..\:/Users/As-Syifa/AndroidStudioProjects/JawaraApps/app/src/main/res/xml/filepaths.xml" value="0.14316239316239315" />

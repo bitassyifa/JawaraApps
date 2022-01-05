@@ -23,6 +23,17 @@
         android:theme="@style/Theme.JawaraApps"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".withdraw.layout.WithdrawActivity"
+            android:exported="true" />
+        <activity
+            android:name=".withdraw.layout.AddBankAccount"
+            android:exported="true"
+            android:theme="@style/LightStatusBar" />
+        <activity
+            android:name=".withdraw.layout.ListRekActivity"
+            android:exported="true"
+            android:theme="@style/LightStatusBar" />
+        <activity
             android:name=".otp.VerifyOtpActivity"
             android:exported="true" />
         <activity
@@ -30,7 +41,8 @@
             android:exported="true" />
         <activity
             android:name=".user.layout.EditProfil"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/LightStatusBar" />
         <activity
             android:name=".pickup.layout.StatusPickupActivity"
             android:exported="true" />
@@ -58,7 +70,8 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/LightStatusBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

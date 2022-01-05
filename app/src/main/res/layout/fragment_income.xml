@@ -4,16 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".wallet.layout.Income">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    tools:context=".wallet.layout.Income"
+    android:background="@color/bg">
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="pemasukan"
-        android:textSize="30dp"
+        android:layout_height="match_parent"
+        android:id="@+id/rv_history"
+        tools:listitem="@layout/adapter_history_trans"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/laoding"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loadingpage"
+        android:visibility="gone"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

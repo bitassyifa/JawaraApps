@@ -1,7 +1,6 @@
 package com.projectassyifa.jawaraapps.login.layout
 
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
@@ -18,11 +17,8 @@ import androidx.navigation.findNavController
 import com.projectassyifa.jawaraapps.R
 import com.projectassyifa.jawaraapps.config.JawaraApps
 import com.projectassyifa.jawaraapps.databinding.FragmentLoginLayoutBinding
-import com.projectassyifa.jawaraapps.extra.Token
-import com.projectassyifa.jawaraapps.home.layout.HomeLayout
 import com.projectassyifa.jawaraapps.login.data.LoginModel
 import com.projectassyifa.jawaraapps.login.data.LoginVM
-import spencerstudios.com.bungeelib.Bungee
 import javax.inject.Inject
 
 
@@ -42,7 +38,6 @@ class LoginLayout : Fragment() , View.OnClickListener {
             getString(R.string.sp),
             Context.MODE_PRIVATE
         )
-
     }
 
     override fun onCreateView(
@@ -57,6 +52,7 @@ class LoginLayout : Fragment() , View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.toRegister.setOnClickListener(this)
         binding.buttonLogin.setOnClickListener(this)
 
@@ -68,19 +64,26 @@ class LoginLayout : Fragment() , View.OnClickListener {
             }
 
             override fun afterTextChanged(p0: Editable?) {
-                if (android.util.Patterns.EMAIL_ADDRESS.matcher(binding.email.text.toString()).matches())
+                if (android.util.Patterns.EMAIL_ADDRESS.matcher(binding.email.text.toString()).matches() || android.util.Patterns.PHONE.matcher(binding.email.text.toString()).matches() )
                     binding.buttonLogin.isEnabled = true
                 else{
                     binding.buttonLogin.isEnabled = false
-                    binding.email.setError("Email not valid!")
+                    binding.email.setError("Email atau No tlp tidak valid")
                 }
             }
 
         })
+
+        val id = dataLogin?.getString(
+            getString(R.string.id),
+            getString(R.string.default_value)
+        )
+
+        println(" ID BOUS ${dataLogin.toString()}")
+
         //login validation
         if (dataLogin?.contains(getString(R.string.id))!! && dataLogin?.contains(getString(R.string.login_method_key))!!)
         {
-
             view.findNavController().navigate(R.id.action_global_to_homeActivity)
         }
 
@@ -128,17 +131,20 @@ class LoginLayout : Fragment() , View.OnClickListener {
                 val emailErr: String = binding.email.text.toString()
 
                 //check if the EditText have values or not
-                if(emailErr.trim().isEmpty()) {
+                if(emailErr.trim().isEmpty())  {
+
                     binding.email.error = "Required"
                     Toast.makeText(this.requireContext(), "Email Required ", Toast.LENGTH_SHORT).show()
 
                 }
                 else if (binding.password.text.toString().trim().isEmpty()) {
+
                     binding.password.error = "Required"
                     Toast.makeText(this.requireContext(), "Password Required ", Toast.LENGTH_SHORT).show()
 
                 }
                 else if (binding.password.length() < 8){
+
                     binding.password.error = "Min 8 Character"
 
                 }
@@ -149,6 +155,7 @@ class LoginLayout : Fragment() , View.OnClickListener {
             }
         }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

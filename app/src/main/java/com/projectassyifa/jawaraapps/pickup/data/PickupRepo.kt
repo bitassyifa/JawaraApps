@@ -16,6 +16,7 @@ class PickupRepo @Inject constructor(val pickupAPI: PickupAPI) {
     var resApi = MutableLiveData<ResponseAPI>()
     var resPick = MutableLiveData<List<PickupModel>>()
     var resStatus = MutableLiveData<List<PickStatus>>()
+    var resWadah = MutableLiveData<List<WadahModel>>()
 
     fun insertPick(token: String,pickModelInsert:PickModelInsert,context: Context){
         pickupAPI.insertPick(token,pickModelInsert).enqueue(object : Callback<ResponseAPI>{
@@ -64,7 +65,6 @@ class PickupRepo @Inject constructor(val pickupAPI: PickupAPI) {
     }
 
     fun getStatusPick(token: String,id_pickup: String,context: Context){
-        println("REPO $id_pickup")
         pickupAPI.getStatusPick(token, id_pickup).enqueue(object :Callback<ResponseAPI>{
             override fun onResponse(call: Call<ResponseAPI>, response: Response<ResponseAPI>) {
                 val res = response.body()
@@ -74,9 +74,13 @@ class PickupRepo @Inject constructor(val pickupAPI: PickupAPI) {
                     val listObject : Type = object : TypeToken<List<PickStatus>>() {}.type
                     val output : List<PickStatus> = gson.fromJson(gson.toJson(resData),listObject)
                     resStatus.value = output
-                    println("OUTPUT ${resStatus.value!![0].keterangan}")
+
                 } else {
-                    println("ELSE")
+                    Toast.makeText(
+                        context,
+                        "Request Failed : Unauthorized",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
 
@@ -86,7 +90,29 @@ class PickupRepo @Inject constructor(val pickupAPI: PickupAPI) {
                     "Request Failed : ${t.printStackTrace()}",
                     Toast.LENGTH_SHORT
                 ).show()
-                println("FAILED CONNECT")
+            }
+        })
+    }
+
+    fun getWadah(context: Context){
+        pickupAPI.getWadah().enqueue(object : Callback<ResponseAPI>{
+            override fun onResponse(call: Call<ResponseAPI>, response: Response<ResponseAPI>) {
+                val res = response.body()
+                if (response.code() == 200){
+                    val resData = res?.data
+                    val gson = Gson()
+                    val listObj : Type = object : TypeToken<List<WadahModel>>() {}.type
+                    val output : List<WadahModel> = gson.fromJson(gson.toJson(resData),listObj)
+                    resWadah.value = output
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseAPI>, t: Throwable) {
+                Toast.makeText(
+                    context,
+                    "Request Failed : ${t.printStackTrace()}",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
         })

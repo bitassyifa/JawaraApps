@@ -13,6 +13,7 @@ interface RegisterAPI {
     fun register(
         @Part("email")email : RequestBody,
         @Part("username")username : RequestBody,
+        @Part("no_tlp")no_tlp : RequestBody,
         @Part("password")password : RequestBody
     ):Call<ResponseAPI>
 }

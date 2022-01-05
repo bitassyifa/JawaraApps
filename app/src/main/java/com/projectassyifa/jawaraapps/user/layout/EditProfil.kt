@@ -94,9 +94,7 @@ class EditProfil : AppCompatActivity(), View.OnClickListener {
                 override fun onItemSelected(parent: AdapterView<*>,
                                             view: View, position: Int, id: Long) {
                     jkl = gender[position]
-
                 }
-
                 override fun onNothingSelected(parent: AdapterView<*>) {
                     // write code to perform some action
                 }
@@ -109,8 +107,17 @@ class EditProfil : AppCompatActivity(), View.OnClickListener {
                     noTlpTv.setText(it.no_tlp)
                     adressTv.setText(it.alamat)
                     namaFile.setText(it.foto_ktp)
+                    if(it.jk == "Laki-laki"){
+                        pilihGender.setSelection(1)
+                    }else if (it.jk == "Perempuan"){
+                        pilihGender.setSelection(2)
+                    }else {
+                        pilihGender.setSelection(0)
+                    }
+
+
                     if (it.foto_ktp != "") {
-                        val linkFoto = "http://202.62.9.138/jawara_api/photo/user/${it.foto_ktp}"
+                        val linkFoto = "http://202.62.9.138/jawara_api/photo/ktp/${it.foto_ktp}"
                         Glide.with(this@EditProfil)
                             .load(linkFoto)
                             .centerCrop()
@@ -127,7 +134,7 @@ class EditProfil : AppCompatActivity(), View.OnClickListener {
             })
             userVM.userById("Bearer ${tokenOuth.fetchAuthToken()}",idUser.toString(),this@EditProfil)
         }
-        blackIconStatusBar(this, R.color.white);
+//        blackIconStatusBar(this, R.color.white);
     }
     private fun showLoad(state : Boolean){
         if (state){
@@ -157,13 +164,13 @@ class EditProfil : AppCompatActivity(), View.OnClickListener {
             }
         });
     }
-    private fun blackIconStatusBar(editProfil: EditProfil, color: Int) {
-      window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
-        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-        window.setStatusBarColor(ContextCompat.getColor(editProfil, color));
-    }
+//    private fun blackIconStatusBar(editProfil: EditProfil, color: Int) {
+//      window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+//        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN);
+//        window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+//        window.setStatusBarColor(ContextCompat.getColor(editProfil, color));
+//    }
 
     @SuppressLint("SetTextI18n")
     override fun onClick(v: View?) {
@@ -200,6 +207,7 @@ class EditProfil : AppCompatActivity(), View.OnClickListener {
               popMenu.show()
           }
           binding.btnSave -> {
+              showLoad(true)
               val updateUserModel = UpdateUserModel(
                   id_user = idUser,
                   nama = binding.namaTv.text.toString(),

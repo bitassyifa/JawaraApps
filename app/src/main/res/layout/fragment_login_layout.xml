@@ -67,9 +67,9 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:fontFamily="@font/poppins_medium"
-        android:text="Email adress"
+        android:text="Email atau No Telepon"
         android:textColor="@color/abu"
-        android:textSize="14dp"
+        android:textSize="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -78,10 +78,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 android:fontFamily="@font/poppins_medium"
                 android:inputType="textEmailAddress"
-                android:hint="Masukan Email"
+                android:hint="Masukan Email atau No Telepon"
                 android:textColor="@color/black"
                 android:layout_marginLeft="36dp"
                 android:layout_marginRight="36dp"
@@ -99,7 +99,7 @@
         android:fontFamily="@font/poppins_medium"
         android:text="Password"
         android:textColor="@color/abu"
-        android:textSize="14dp"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
 
@@ -114,7 +114,7 @@
         android:hint="Masukan Password"
         android:inputType="textPassword"
         android:textColor="@color/black"
-        android:textSize="15dp"
+        android:textSize="12sp"
         android:theme="@style/MyEditTextTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -127,6 +127,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/poppins_medium"
         android:text="Lupa Password?"
+        android:textSize="12sp"
         android:textColor="@color/firstcolor"
         app:layout_constraintStart_toStartOf="@+id/password"
         app:layout_constraintTop_toBottomOf="@+id/password" />

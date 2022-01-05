@@ -16,4 +16,7 @@ interface PickupAPI {
     @GET("pick/status/{id_pickup}")
     fun getStatusPick(@Header("Authorization")token : String,
                       @Path("id_pickup")id_pickup : String) : Call<ResponseAPI>
+
+    @GET("pick/wadah")
+    fun getWadah():Call<ResponseAPI>
 }

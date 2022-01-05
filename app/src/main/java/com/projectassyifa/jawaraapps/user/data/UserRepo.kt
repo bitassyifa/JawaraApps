@@ -1,10 +1,14 @@
 package com.projectassyifa.jawaraapps.user.data
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
+import android.content.SharedPreferences
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import com.projectassyifa.jawaraapps.R
 import com.projectassyifa.jawaraapps.extra.ResponseAPI
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -15,11 +19,16 @@ import retrofit2.Response
 import java.io.File
 import java.lang.reflect.Type
 import javax.inject.Inject
+import android.content.res.Resources
+import com.projectassyifa.jawaraapps.login.layout.LoginActivity
+
 
 class UserRepo @Inject constructor(val userAPI: UserAPI) {
     var userResponse = MutableLiveData<UserModel>()
     var resApi = MutableLiveData<ResponseAPI>()
-
+    var activity : Activity? = null
+    var codeError = MutableLiveData<Int>()
+//    val dataLogin : SharedPreferences = getSharedPreferences("Mypref", 0);
 
     fun userById(token: String ,id : String,context: Context){
 
@@ -32,6 +41,17 @@ class UserRepo @Inject constructor(val userAPI: UserAPI) {
                     val listObject : Type = object :TypeToken <List<UserModel>>() {}.type
                     val output : List<UserModel> = gson.fromJson(gson.toJson(resData),listObject)
                     userResponse.value = output[0]
+                } else {
+                    val settings =
+                        context.getSharedPreferences(context.getString(R.string.sp), Context.MODE_PRIVATE)
+                    settings.edit().clear().apply()
+//                    codeError.value = response.code()
+                    Toast.makeText(
+                        context,
+                        "Sesi anda telah habis , mohon login ulang",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    context.startActivity(Intent(context,LoginActivity::class.java))
                 }
             }
 
@@ -42,7 +62,6 @@ class UserRepo @Inject constructor(val userAPI: UserAPI) {
                     Toast.LENGTH_SHORT
                 ).show()
             }
-
         })
     }
 

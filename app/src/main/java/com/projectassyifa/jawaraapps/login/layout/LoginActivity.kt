@@ -14,7 +14,6 @@ class LoginActivity : AppCompatActivity() {
     override fun onBackPressed() {
         if (backpressedTime + 2000 > System.currentTimeMillis()) {
             finishAffinity()
-
         } else {
             Toast.makeText(
                 applicationContext,

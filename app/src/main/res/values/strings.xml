@@ -1,23 +1,15 @@
 <resources>
     <string name="app_name">Jawara</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="panduan">Panduan</string>
-    <string name="tukar_poin">Tukar Poin</string>
-    <string name="cari_agen">Cari Agen</string>
-    <string name="_350_kg_ntotal_minyak">350 Kg\nTotal Minyak</string>
     <string name="sp">com.projectassyifa.shared.preference</string>
     <string name="email">Email</string>
     <string name="login_method_key">Login</string>
-    <string name="token">Token</string>
     <string name="default_value">notfound</string>
     <string name="username">Username</string>
     <string name="id">ID</string>
-    <string name="tukarkan_koinmu">Tukarkan Koinmu</string>
     <string name="lihat_semua"><![CDATA[See All>]]></string>
     <string name="reward">Reward</string>
     <string name="name_reward">Name Reward</string>
-    <string name="koin_reward">Koin Reward</string>
     <string name="menu_home">Home</string>
     <string name="menu_portofolio">Portofolio</string>
     <string name="menu_profil">Profil</string>
@@ -53,16 +45,12 @@
         <item>@drawable/vespametic</item>
     </integer-array>
     <string name="title_activity_map_agent">MapAgentActivity</string>
-    <string name="maps_api_key">AIzaSyBQjVmGKO_W2E5AyqoWZCqU6VjX65tdGAg</string>
     <string name="map_view">map_view</string>
-    <string name="tempat_penjemputan">Tempat Penjemputan :</string>
-    <string name="poto_profil">pp</string>
     <string name="logout">Logout</string>
     <string name="agent">Agent</string>
     <string name="pilih_agent">Pilih Agent</string>
     <string name="id_pick">Id Pick</string>
     <string name="sts_pick">Status Pick</string>
-    <string name="stopbuangjalantah">#StopBuangJalantah!</string>
     <string name="img">img</string>
     <string name="tgl">tgl</string>
     <string name="status_pickup">Detail Status Pickup</string>
@@ -72,14 +60,10 @@
     <string name="menu_cs">CS</string>
     <string name="request_pickup">Request Pickup</string>
     <string name="catatan">Catatan</string>
-    <string name="Saldo">saldo</string>
-    <string name="minyak">Minyak</string>
-    <string name="name">Name</string>
     <string name="user_status">Status : </string>
     <string name="sts_verifikasi">Status Verifikasi</string>
     <string name="notlp">No Tlp</string>
     <string name="akun">Akun</string>
-    <string name="ubah_profil">Ubah Profil</string>
     <string name="Password">Password</string>
     <string name="keuntungan_pakai_jawara">Keuntungan pakai JAWARA</string>
     <string name="syarat_amp_ketentuan"><![CDATA[Syarat & Ketentuan]]></string>
@@ -97,4 +81,12 @@
     <string name="verifikasi">Verifikasi</string>
     <string name="my_wallet">My Wallet</string>
     <string name="tarik_tunai">Tarik tunai</string>
+    <string name="rekening_bank">Rekening Bank</string>
+    <string name="tambah_rekening_bank_baru">Tambah rekening bank baru</string>
+    <string name="tambah_rekening">Tambah Rekening</string>
+    <string name="simpan_amp_lanjut"><![CDATA[Simpan & Lanjut]]></string>
+    <string name="simpan">Simpan</string>
+    <string name="saldo">Saldo</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -46,25 +46,11 @@ class VerifyOtpActivity : AppCompatActivity(), View.OnClickListener {
         
         binding.apply {
             verifyBtn.setOnClickListener(this@VerifyOtpActivity)
-            notlpVerif.text = intent.getStringExtra(EXTRA_NOTLP)
+            notlpVerif.text = "62+ $notlp"
         }
     }
 
-    override fun onClick(v: View?) {
-        when(v){
-            binding.verifyBtn ->{
-                showLoad(true)
-                val otp = binding.idOtp.text.toString().trim()
-                if(!otp.isEmpty()){
-                    val credential : PhoneAuthCredential = PhoneAuthProvider.getCredential(
-                        storedVerificationId.toString(), otp)
-                    signInWithPhoneAuthCredential(credential)
-                }else{
-                    Toast.makeText(this,"Masukan OTP", Toast.LENGTH_SHORT).show()
-                }
-            }
-        }
-    }
+
 
     private fun signInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
         auth.signInWithCredential(credential)
@@ -76,7 +62,8 @@ class VerifyOtpActivity : AppCompatActivity(), View.OnClickListener {
                 val dataRegist = RegisterModel(
                     username = username.toString(),
                     email = email.toString(),
-                    password = password.toString()
+                    password = password.toString(),
+                    no_tlp = "0$notlp"
                 )
                     registerVM.resApi.observe(this, Observer {
                         if (it.status){
@@ -91,10 +78,28 @@ class VerifyOtpActivity : AppCompatActivity(), View.OnClickListener {
 // Sign in failed, display a message and update the UI
                     if (task.exception is FirebaseAuthInvalidCredentialsException) {
 // The verification code entered was invalid
+                        showLoad(false)
                         Toast.makeText(this,"kode OTP tidak valid",Toast.LENGTH_SHORT).show()
                     }
                 }
             }
+    }
+    override fun onClick(v: View?) {
+        when(v){
+            binding.verifyBtn ->{
+                showLoad(true)
+                val otp = binding.idOtp.text.toString().trim()
+                if(!otp.isEmpty()){
+                    val credential : PhoneAuthCredential = PhoneAuthProvider.getCredential(
+                        storedVerificationId.toString(), otp)
+                    signInWithPhoneAuthCredential(credential)
+
+                }else{
+                    showLoad(false)
+                    Toast.makeText(this,"Masukan OTP", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
     private fun showLoad(state : Boolean){
         if (state){

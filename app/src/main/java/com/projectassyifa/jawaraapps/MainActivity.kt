@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        window.statusBarColor = ContextCompat.getColor(this, R.color.white)
+//        window.statusBarColor = ContextCompat.getColor(this, R.color.white)
         supportActionBar?.hide()
         Handler().postDelayed({
             val intent = Intent( this, LoginActivity::class.java)

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_rek"
+    android:padding="2dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/logobank"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/duid"
+        app:civ_border_width="1dp"
+        app:civ_border_color="@color/abu1"
+        android:layout_margin="5dp"
+        android:contentDescription="@string/img"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nama_pemilik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Nama"
+        android:textColor="@color/abu"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/logobank"
+        app:layout_constraintStart_toEndOf="@+id/logobank"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/rekening"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="BANK | Norek"
+        android:textColor="@color/abu1"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_del"
+        app:layout_constraintStart_toStartOf="@+id/nama_pemilik"
+        app:layout_constraintTop_toBottomOf="@+id/nama_pemilik" />
+
+    <ImageView
+        android:clickable="true"
+        android:id="@+id/btn_del"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_del"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginEnd="10dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/abu1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rekening"
+        tools:layout_editor_absoluteX="2dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

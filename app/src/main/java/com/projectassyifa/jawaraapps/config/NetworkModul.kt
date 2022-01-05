@@ -5,6 +5,8 @@ import com.projectassyifa.jawaraapps.maps.data.AgentAPI
 import com.projectassyifa.jawaraapps.pickup.data.PickupAPI
 import com.projectassyifa.jawaraapps.register.data.RegisterAPI
 import com.projectassyifa.jawaraapps.user.data.UserAPI
+import com.projectassyifa.jawaraapps.wallet.data.WalletAPI
+import com.projectassyifa.jawaraapps.withdraw.data.WithdrawAPI
 import dagger.Module
 import dagger.Provides
 
@@ -30,5 +32,13 @@ class NetworkModul {
     @Provides
     fun providePickupAPI(): PickupAPI {
         return Connection.urlCon().create(PickupAPI::class.java)
+    }
+    @Provides
+    fun provideWalletAPI(): WalletAPI {
+        return Connection.urlCon().create(WalletAPI::class.java)
+    }
+    @Provides
+    fun provideWithdrawAPI(): WithdrawAPI {
+        return Connection.urlCon().create(WithdrawAPI::class.java)
     }
 }

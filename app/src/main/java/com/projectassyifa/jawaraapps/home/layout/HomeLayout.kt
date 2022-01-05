@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,12 +19,18 @@ import com.projectassyifa.jawaraapps.config.JawaraApps
 import com.projectassyifa.jawaraapps.databinding.FragmentHomeLayoutBinding
 import com.projectassyifa.jawaraapps.databinding.FragmentLoginLayoutBinding
 import com.projectassyifa.jawaraapps.extra.Token
+import com.projectassyifa.jawaraapps.login.layout.LoginActivity
 import com.projectassyifa.jawaraapps.maps.layout.MapAgentActivity
 import com.projectassyifa.jawaraapps.reward.data.RewardAdapter
 import com.projectassyifa.jawaraapps.reward.data.RewardModel
 import com.projectassyifa.jawaraapps.user.data.UserModel
+import com.projectassyifa.jawaraapps.user.data.UserRepo
 import com.projectassyifa.jawaraapps.user.data.UserVM
+import com.projectassyifa.jawaraapps.user.layout.EditProfil
+import java.text.NumberFormat
+import java.util.*
 import javax.inject.Inject
+import kotlin.collections.ArrayList
 
 
 class HomeLayout : Fragment() {
@@ -33,6 +40,12 @@ class HomeLayout : Fragment() {
     private var _binding: FragmentHomeLayoutBinding? = null
     private val binding get() = _binding!!
     var dataLogin: SharedPreferences? = null
+    val localeID = Locale("in", "ID")
+    val formatRupiah = NumberFormat.getCurrencyInstance(localeID)
+    var verif : String? = null
+
+    @Inject
+    lateinit var userRepo: UserRepo
 
     @Inject
     lateinit var userVM: UserVM
@@ -62,13 +75,19 @@ class HomeLayout : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.searchAgent.setOnClickListener {
-            startActivity(Intent(this.activity,MapAgentActivity::class.java))
+            if (verif == "verified"){
+                startActivity(Intent(this.activity,MapAgentActivity::class.java))
+            } else {
+                Toast.makeText(context, "Mohon lengkapi biodata dan tunggu verifikasi ", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this.requireContext(),EditProfil::class.java))
+            }
+
         }
-        rv = binding.rewardRv
-        rv.setHasFixedSize(true)
-        list.addAll(listReward)
-        rv.isNestedScrollingEnabled = false;
-        showList()
+//        rv = binding.rewardRv
+//        rv.setHasFixedSize(true)
+//        list.addAll(listReward)
+//        rv.isNestedScrollingEnabled = false;
+//        showList()
 
         tokenOuth = Token(requireContext())
         val id = dataLogin?.getString(
@@ -79,11 +98,18 @@ class HomeLayout : Fragment() {
             getString(R.string.username),
             getString(R.string.default_value)
         )
+
         binding.username.text = " Hi, $username"
 
         userVM.userData.observe(viewLifecycleOwner, Observer {
-            binding.saldoTv.text = "Rp. ${it.saldo}\nSaldo"
-            binding.oil.text = "${it.total_minyak} Kg \nMinyak"
+           if (it != null){
+               binding.saldoTv.setText(formatRupiah.format(it.saldo))
+               binding.oil.text = "${it.total_minyak} Kg"
+               verif = it.sts_verifikasi
+           } else {
+//               println("KODE ERRR ${userRepo.codeError}")
+           }
+
         })
         userVM.userById("Bearer ${tokenOuth.fetchAuthToken()}",id.toString(),requireContext())
 

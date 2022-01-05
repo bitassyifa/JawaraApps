@@ -9,7 +9,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/potoProfil"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -304,6 +304,7 @@
         app:lottie_rawRes="@raw/load1"
         android:visibility="gone"
         />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

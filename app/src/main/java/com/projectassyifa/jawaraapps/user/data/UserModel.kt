@@ -12,7 +12,7 @@ class UserModel(
     var foto_diri : String?,
     var foto_ktp : String?,
     var alamat : String?,
-    var saldo : String?,
+    var saldo  : Int = 0,
     var total_minyak : String?,
     var sts_verifikasi : String?,
 )

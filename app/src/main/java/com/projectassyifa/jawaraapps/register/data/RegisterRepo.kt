@@ -22,9 +22,10 @@ class RegisterRepo @Inject constructor(val registerAPI: RegisterAPI){
     fun register(registerModel: RegisterModel,context: Context){
         val username = convert(registerModel.username)
         val email = convert(registerModel.email)
+        val no_tlp = convert(registerModel.no_tlp)
         val password = convert(registerModel.password)
 
-        registerAPI.register(email, username, password).enqueue(object : Callback<ResponseAPI>{
+        registerAPI.register(email, username, no_tlp,password).enqueue(object : Callback<ResponseAPI>{
             override fun onResponse(call: Call<ResponseAPI>, response: Response<ResponseAPI>) {
                 val res = response.body()
                 if (res?.status == true){
@@ -35,7 +36,7 @@ class RegisterRepo @Inject constructor(val registerAPI: RegisterAPI){
                     val errObj : Type = object : TypeToken<List<MessageError>>() {}.type
                     val output : List<MessageError> = gson.fromJson(gson.toJson(err),errObj)
                     resErr.value = output
-                    Toast.makeText(context, "${output[0].field} ${output[0].type}", Toast.LENGTH_SHORT).show()
+//                    Toast.makeText(context, "${output[0].field} ${output[0].type}", Toast.LENGTH_SHORT).show()
 
                 }
             }

@@ -55,6 +55,7 @@ class SendOtpActivity : AppCompatActivity(), View.OnClickListener {
 
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
                 startActivity(Intent(applicationContext, LoginActivity::class.java))
+                Toast.makeText(this@SendOtpActivity,"Andan sudah melakukan verifikasi sebelumnya", Toast.LENGTH_SHORT).show()
                 finish()
             }
 
@@ -93,8 +94,8 @@ class SendOtpActivity : AppCompatActivity(), View.OnClickListener {
         var number = binding.phoneNumber.text.toString().trim()
 
         if(!number.isEmpty()){
-            number = "+62"+number
             notlp = number
+            number = "+62"+number
             sendVerificationcode(number)
         }else{
             Toast.makeText(this,"Mohon masukan no telepon", Toast.LENGTH_SHORT).show()

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".withdraw.layout.AddBankAccount"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:background="@color/white"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="@string/tambah_rekening"
+        android:textAlignment="center"
+        android:textColor="@color/firstcolor"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textSize="15sp"
+        android:text="Informasi Rekening Bank"
+        android:textColor="@color/abu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Pilih Bank"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <com.zues.searchable_spinner.SearchableSpinner
+        android:id="@+id/spinner_listbank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        app:label_color="@color/abu"
+        app:label_hint="Pilih Bank"
+        app:label_text_size="15sp"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        app:selected_item_color="@color/abu"
+        app:showSearch="true"
+        app:label_alignment="0"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/abu1"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_listbank"
+        app:layout_constraintStart_toStartOf="@+id/spinner_listbank"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_listbank" />
+
+    <TextView
+        android:id="@+id/w"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Nomor Rekening"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/norek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@+id/w"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@null"
+        android:paddingStart="5dp"
+        android:maxLength="19"
+        android:paddingEnd="5dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/abu"/>
+    <View
+        android:id="@+id/view11"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/abu1"
+        app:layout_constraintEnd_toEndOf="@+id/norek"
+        app:layout_constraintStart_toStartOf="@+id/norek"
+        app:layout_constraintTop_toBottomOf="@+id/norek" />
+
+    <TextView
+        android:id="@+id/www"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Nama Pemilik"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view11" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/namarek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/www"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@null"
+        android:padding="5dp"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="@color/abu"/>
+    <View
+        android:id="@+id/view12"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/abu1"
+        app:layout_constraintEnd_toEndOf="@+id/namarek"
+        app:layout_constraintStart_toStartOf="@+id/namarek"
+        app:layout_constraintTop_toBottomOf="@+id/namarek" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Nama pemilik harus sesuai dengan nama akun "
+        android:textColor="@color/red"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/namarek"
+        app:layout_constraintTop_toBottomOf="@+id/view12" />
+
+    <Button
+        android:id="@+id/btn_simpan"
+        style="@style/MaterialButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/simpan"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/firstcolor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="30dp"
+        android:paddingStart="20dp"
+        android:enabled="false"
+       android:paddingEnd="20dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
